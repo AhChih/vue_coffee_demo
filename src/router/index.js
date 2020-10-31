@@ -11,14 +11,14 @@ export default new Router({
       redirect: '/'
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: () => import('../views/Home.vue')
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/Login.vue')
     },
     {
       path: '/',
-      name: 'Login',
-      component: () => import('../views/Login.vue')
+      name: 'Home',
+      component: () => import('../views/Home.vue')
     }
   ]
 })
