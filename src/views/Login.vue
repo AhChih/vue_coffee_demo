@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"></loading>
     <div class="logo_box">
       <img class="logo" src="https://i.imgur.com/4PvYjzf.png" alt="">
       <h1>沒星巴克好喝咖啡館</h1>
@@ -31,7 +32,9 @@ export default {
     }
   },
   computed: {
-
+    isLoading () {
+      return this.$store.state.isLoading
+    }
   },
   methods: {
     login () {

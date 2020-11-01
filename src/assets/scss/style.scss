@@ -1,3 +1,16 @@
+.container {
+
+}
+
+.active_cu {
+    color: rgb(255, 201, 100) !important;
+}
+
+body {
+    font-family: '微軟正黑體';
+    background-color: rgb(233, 233, 233);
+}
+
 .banner {
     position: relative;
     background-image: url('https://i.imgur.com/Fo2acjx.jpeg');
@@ -5,13 +18,18 @@
     background-size: cover;
     opacity: .9;
     width: 100%;
-    height: 70vh;
+    height: 55vh;
     h3 { 
+        padding: 30px 0 0 30px;
         color: wheat;
         font-size: 36px;
     }
+    h4 {
+        padding: 10px 0 0 30px;
+        color: rgb(255, 255, 255);
+    }
     button {
-        margin: 0 0 0 50px;
+        margin: 0 0 0 30px;
         font-size: 21px;
     }
     p {
@@ -21,6 +39,7 @@
         color: wheat;
     }
     .unfinish {
+      margin-top: 130px;
       color: rgb(255, 0, 0);
       span {
           color: white;
@@ -57,6 +76,7 @@
     h4 {
         margin-top: 15px;
         color: red;
+        font-weight: bold;
     }
     a {
         color: gray;
@@ -66,21 +86,50 @@
     }
 }
 
+.about {
+    font-size: 28px;
+        text-align: center;
+        color: rgb(255, 201, 100);
+}
+
+.about_text {
+    h4 {
+        padding: 0 0 30px 0;
+        color: red;
+        text-decoration: underline;
+    }
+    span {
+        display: block;
+        line-height: 2.0;
+        letter-spacing: 1.6;
+    }
+}
+
+.cooperation {
+    color: rgb(255, 201, 100);
+    font-weight: bold;
+}
+
+
 .footer {
+    color: rgb(163, 109, 7);
     text-align: center;
     padding: 20px 0 0 0;
     height: 50px;
     margin-top: 30px;
-    background-color: rgb(219, 219, 219);
 }
+
 
 @media (max-width: 991px) {
 .banner {
     height: 50vh;
     text-align: center;
     h3 {
-        text-align: left;
-        font-size: 24px;
+        text-align: center;
+        font-size: 30px;
+    }
+    h4 {
+        text-align: center;
     }
     p {
         text-align: center;
@@ -96,6 +145,52 @@
         text-align: left;
     }
   }
+  .rwd {
+      margin: 15px 0;
+  }
+}
+
+.about_text {
+    margin-top: 30px;
+    text-align: center;
+    h4 {
+        padding: 0 0 25px 0;
+        color: red;
+        text-decoration: underline;
+    }
+    span {
+        display: block;
+        line-height: 2.0;
+        letter-spacing: 1.6;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner {
+        height: 50vh;
+        h3 {
+            font-size: 22px;
+            padding: 20px 0 0 0;
+        }
+        h4 {
+          padding: 10px 0 0 0;
+        }
+        .unfinish {
+            margin: 10px 0 0 0;
+        }
+    }
+    .rwd {
+        margin: 20px 0;
+    }
+}
+
+.video {
+    opacity: .7;
+    border-radius: 5%;
+}
+
+.no-text {
+    margin: 70px 0;
 }
 
 // coupon
