@@ -1,3 +1,42 @@
+.banner {
+    position: relative;
+    background-image: url('https://i.imgur.com/Fo2acjx.jpeg');
+    background-position: center;
+    background-size: cover;
+    opacity: .9;
+    width: 100%;
+    height: 70vh;
+    h3 { 
+        color: wheat;
+        font-size: 36px;
+    }
+    button {
+        margin: 0 0 0 50px;
+        font-size: 21px;
+    }
+    p {
+        margin: 10px 10px 0 0;
+        text-align: right;
+        font-size: 21px;
+        color: wheat;
+    }
+    .unfinish {
+      color: rgb(255, 0, 0);
+      span {
+          color: white;
+      }
+    }
+    .finish {
+        color: rgb(121, 255, 121);
+        span {
+            color: white;
+            text-decoration: line-through;
+        }
+    }
+    .doing {
+        color: rgb(223, 223, 223);
+    }
+}
 .logo_box {
     margin: 0 auto;
     text-align: center;
@@ -12,4 +51,61 @@
     margin: 50px auto 0 auto;
     padding: 15px;
     border: 1px solid black;
+}
+
+.news {
+    h4 {
+        margin-top: 15px;
+        color: red;
+    }
+    a {
+        color: gray;
+    }
+    li {
+        font-size: 21px;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0 0 0;
+    height: 50px;
+    margin-top: 30px;
+    background-color: rgb(219, 219, 219);
+}
+
+@media (max-width: 991px) {
+.banner {
+    height: 50vh;
+    text-align: center;
+    h3 {
+        text-align: left;
+        font-size: 24px;
+    }
+    p {
+        text-align: center;
+    }
+    button {
+        margin: 0 auto;
+    }
+}
+.news {
+    margin-top: 30px;
+    text-align: center;
+    a {
+        text-align: left;
+    }
+  }
+}
+
+// coupon
+
+.coupon_bg {
+    margin: 20px auto 0 auto;
+    background-image: url(https://i.imgur.com/KqvZSIl.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 100vh;
 }

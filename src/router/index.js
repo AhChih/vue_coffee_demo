@@ -11,14 +11,19 @@ export default new Router({
       redirect: '/'
     },
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: () => import('../views/Login.vue')
     },
     {
-      path: '/',
-      name: 'Home',
+      path: '/home',
+      name: '首頁',
       component: () => import('../views/Home.vue')
+    },
+    {
+      path: '/coupon',
+      name: '優惠卷',
+      component: () => import('../views/Coupon.vue')
     }
   ]
 })
