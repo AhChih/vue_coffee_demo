@@ -1,23 +1,6 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <img style="width:60px" class="logo" src="https://i.imgur.com/4PvYjzf.png" alt="">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <router-link to="/home" style="font-size:28px" class="nav-link" href="#">首頁 <span class="sr-only">(current)</span></router-link>
-          <router-link to="/coupon" style="font-size:28px" class="nav-link" href="#">優惠卷</router-link>
-          <a class="nav-link disabled" style="font-size:28px" href="#">線上訂購</a>
-          <a class="nav-link disabled" style="font-size:28px" href="#">訂單查詢</a>
-          <a class="nav-link disabled" style="font-size:28px" href="#" tabindex="-1" aria-disabled="true">會員管理</a>
-        </div>
-        <div class="ml-auto">
-          <router-link to="/" class="nav-link ml-auto" style="font-size:28px" href="#" tabindex="-1" aria-disabled="true">登出</router-link>
-        </div>
-      </div>
-    </nav>
+    <Navbar></Navbar>
     <div class="banner">
       <h3 class="">親愛的{{ $store.state.persone }}，想來杯好咖啡嗎？</h3>
       <h4 class="">目前累積的會員點數：{{ $store.state.point }}</h4>
@@ -52,23 +35,28 @@
       </div>
     </div>
     <hr>
-    <h4 class="about my-5">關於我們</h4>
-    <div class="row my-5">
-       <video class="col-lg-6 col-sm-12 video" loop autoplay muted>
-        <source type="video/mp4" src="../assets/coffee.mp4">
-      </video>
-      <div class="col-lg-6 about_text">
-        <h4>為什麼比星巴克難喝</h4>
-        <span>咖啡是一種極不穩定的液體，因為義式濃縮咖啡的沖煮步驟十分繁雜，每一個步驟都會coffee2影響到義式濃縮咖啡的最終品質，並改變咖啡的特性，所以瞭解其沖煮方式並選擇適當的咖啡豆十分的重要。義式濃縮咖啡機可以連續萃取數杯咖啡，沖煮過程中的高壓能將咖啡豆中的油脂和膠質乳化溶解，咖啡豆中的菁華經由壓力被完全萃取出來，使得煮出的咖啡濃度更濃，口味和香味更好。
-記得不要將咖啡研磨的太細，否則萃取出來的咖啡將會太苦</span>
+    <div class="about">
+    <h4 class="my-3">關於我們</h4>
+      <div class="row my-5">
+        <video class="col-lg-6 col-sm-12 video" loop autoplay muted>
+          <source type="video/mp4" src="../assets/coffee.mp4">
+        </video>
+        <div class="col-lg-6 about_text">
+          <h4>為什麼比星巴克難喝</h4>
+          <span>咖啡是一種極不穩定的液體，因為義式濃縮咖啡的沖煮步驟十分繁雜，
+            每一個步驟都會coffee2影響到義式濃縮咖啡的最終品質，並改變咖啡的特性，
+            所以瞭解其沖煮方式並選擇適當的咖啡豆十分的重要。義式濃縮咖啡機可以連續萃取數杯咖啡，
+            沖煮過程中的高壓能將咖啡豆中的油脂和膠質乳化溶解，咖啡豆中的菁華經由壓力被完全萃取出來，
+            使得煮出的咖啡濃度更濃，口味和香味更好。記得不要將咖啡研磨的太細，
+            否則萃取出來的咖啡將會太苦
+          </span>
+        </div>
       </div>
-    <div>
-
-      </div>
+      <hr>
     </div>
-    <hr>
-    <h3 class="my-5 text-center cooperation">我們的合作商</h3>
-    <div class="row text-center">
+    <div class="cooperation">
+      <h3 class="my-5 text-center">我們的合作商</h3>
+          <div class="row text-center">
       <div class="col-lg-2 col-md-3 rwd">
         <img src="https://i.imgur.com/v2cRZ1Y.png" class="w-75" alt="">
       </div>
@@ -106,6 +94,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tainan_City_Government_Logo.svg/1920px-Tainan_City_Government_Logo.svg.png" class="w-75" alt="">
       </div>
     </div>
+    </div>
     <h4 class="text-center no-text">----- 以上通通沒有 -----</h4>
     <div class="col-12 footer">
       <h5>Copyright © 2020 好玩工作室 健誌</h5>
@@ -114,10 +103,9 @@
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
-import $ from 'jquery'
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
+import Navbar from '../component/navbar'
 
 export default {
   data () {
@@ -125,11 +113,14 @@ export default {
     }
   },
   components: {
-    VueCal
+    VueCal,
+    Navbar
   },
   methods: {
     goCoupon () {
       alert('這麼快就想抽獎，慢慢等吧你！')
+    },
+    onToggle (active) {
     }
   }
 }

@@ -77,7 +77,6 @@ export default new Vuex.Store({
       alert('已完成註冊')
     },
     getAccount () {
-      this.state.getAccountAry = JSON.parse(localStorage.getItem('account'))
     }
   },
   modules: {
