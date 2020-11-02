@@ -8,12 +8,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    persone: '',
     point: 500,
     isLoading: false,
     step: false,
     account: {
       email: '',
       password: ''
+    },
+    getAccountAry: {
+
     }
   },
   mutations: {
@@ -25,48 +29,55 @@ export default new Vuex.Store({
       if (this.state.account.email === '' || this.state.account.password === '') {
         alert('帳號或密碼不得為空')
         return
+      } else if (
+        this.state.account.email !== this.state.getAccountAry.email || this.state.account.password !== this.state.getAccountAry.password
+      ) {
+        alert('帳號密碼有錯誤，請再次檢查')
+        return
       }
-      const xhr = new XMLHttpRequest()
-      xhr.open('post', 'https://hexschool-tutorial.herokuapp.com/api/signin', true)
-      xhr.setRequestHeader('Content-Type', 'application/json')
-      const data = JSON.stringify(this.state.account)
-      xhr.send(data)
-      vm.state.isLoading = true
-      xhr.onload = function () {
-        vm.state.isLoading = false
-        const callBackData = JSON.parse(xhr.responseText)
-        if (callBackData.success === true) {
-          router.push('/home', () => {})
+      router.push('/home', () => {})
+      setTimeout(() => {
+        vm.state.persone = prompt('請輸入您的姓名')
+        if (vm.state.persone !== null) {
           Swal.fire({
-            title: '冠興，歡迎您回來',
+            title: vm.state.persone + '歡迎您回來',
             text: '會員點數已自動贈送 500 點',
             imageUrl: 'https://i.imgur.com/RakMKVK.jpg',
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image'
           })
-        } else {
-          alert(callBackData.message)
         }
-      }
+      }, 500)
     },
     registered () {
       if (this.state.account.email === '' || this.state.account.password === '') {
         alert('帳號或密碼不得為空')
         return
+      } else if (
+        this.state.account.email.length > 10
+      ) {
+        alert('電話號碼長度錯誤')
+        return
+      } else if (
+        this.state.account.email[0] !== '0' || this.state.account.email[1] !== '9'
+      ) {
+        alert('號碼必須為 09 開頭')
+        return
+      } else if (
+        this.state.account.email === this.state.getAccountAry.email
+      ) {
+        alert('此帳號已被註冊過')
+        return
       }
-      const xhr = new XMLHttpRequest()
-      xhr.open('post', 'https://hexschool-tutorial.herokuapp.com/api/signup', true)
-      xhr.setRequestHeader('Content-Type', 'application/json')
-      const data = JSON.stringify(this.state.account)
-      xhr.send(data)
-      xhr.onload = function () {
-        const callBackData = JSON.parse(xhr.responseText)
-        alert(callBackData.message)
-      }
+      const accountStr = JSON.stringify(this.state.account)
+      localStorage.setItem('account', accountStr)
+      this.state.getAccountAry = JSON.parse(localStorage.getItem('account'))
+      console.log(this.state.getAccountAry)
+      alert('已完成註冊')
     },
-    sweetAlert () {
-      console.log('ttt')
+    getAccount () {
+      this.state.getAccountAry = JSON.parse(localStorage.getItem('account'))
     }
   },
   modules: {

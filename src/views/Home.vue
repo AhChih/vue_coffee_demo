@@ -19,7 +19,7 @@
       </div>
     </nav>
     <div class="banner">
-      <h3 class="">親愛的冠興，想來杯好咖啡嗎？</h3>
+      <h3 class="">親愛的{{ $store.state.persone }}，想來杯好咖啡嗎？</h3>
       <h4 class="">目前累積的會員點數：{{ $store.state.point }}</h4>
       <button class="btn btn-danger mt-3 mb-5" @click.prevent="goCoupon()">抽獎去</button>
         <p class="unfinish">今日未完成工作：<span>暫時還沒有</span></p>
@@ -131,9 +131,6 @@ export default {
     goCoupon () {
       alert('這麼快就想抽獎，慢慢等吧你！')
     }
-  },
-  created () {
-    this.$store.dispatch('sweetAlert')
   }
 }
 </script>

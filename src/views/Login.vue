@@ -7,12 +7,12 @@
     </div>
     <form class="form-box">
       <div class="form-group">
-        <label>信箱</label>
-        <input type="email" class="form-control"  placeholder="Enter email" v-model="$store.state.account.email" name="account">
+        <label>手機號碼</label>
+        <input type="number" class="form-control"  placeholder="請輸入號碼" v-model="$store.state.account.email" name="account">
       </div>
       <div class="form-group">
         <label>密碼</label>
-        <input type="password" class="form-control" placeholder="Password" v-model="$store.state.account.password" name="password">
+        <input type="password" class="form-control" placeholder="請輸入密碼" v-model="$store.state.account.password" name="password">
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input">
@@ -43,6 +43,9 @@ export default {
     registered () {
       this.$store.dispatch('registered')
     }
+  },
+  created () {
+    this.$store.dispatch('getAccount')
   }
 }
 </script>
