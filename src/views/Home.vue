@@ -9,7 +9,7 @@
         <p class="finish">今日已完成工作：<span>LOL 上鑽石</span></p>
         <p class="doing">正在進行的工作：<span>跟同學們做報告</span></p>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3 wow shake">
       <div class="col-xl-3 col-md-12 col-sm-12">
         <vue-cal class="vuecal--rounded-theme vuecal--green-theme"
           xsmall
@@ -20,7 +20,7 @@
           style="height: 300px">
         </vue-cal>
       </div>
-      <div class="col-xl-9 news" >
+      <div class="col-xl-9 news wow rotateInDownRight" >
         <h4>最新消息</h4>
         <hr>
         <ul>
@@ -87,7 +87,7 @@
       <div class="col-lg-2 col-md-3 rwd">
         <img src="https://www.vjmedia.com.hk/wp-content/uploads/2020/06/15/207615/24991509_1214722965296209_7229732677529513301_n.jpg" class="w-50" alt="">
       </div>
-            <div class="col-lg-2 col-md-3 rwd">
+      <div class="col-lg-2 col-md-3 rwd">
         <img src="https://play-lh.googleusercontent.com/MMBG4AZmpMhSfhF5k7QnFmhvFbaF5ZC_BtEOIKRt9TIkUZjul2lWwPZV75PwTfoSm23-jgMxkroRGA-vkDg=s180-rw" class="w-50" alt="">
       </div>
       <div class="col-lg-2 col-md-3 rwd">
@@ -103,6 +103,8 @@
 </template>
 
 <script>
+import { WOW } from 'wowjs'
+
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
 import Navbar from '../component/navbar'
@@ -115,6 +117,15 @@ export default {
   components: {
     VueCal,
     Navbar
+  },
+  mounted () {
+    var wow = new WOW({
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 0,
+      mobile: true
+    })
+    wow.init()
   },
   methods: {
     goCoupon () {

@@ -191,6 +191,9 @@ body {
     .no-text {
         display: none;
     }
+    .form-box {
+        border: none;
+    }
 }
 
 .video {
@@ -270,7 +273,7 @@ body {
   top: 203px;
   left: 203px;
   right: 0;
-  background: url("https://i.imgur.com/tOlyCTi.png") center center no-repeat;
+  background: url("https://i.imgur.com/Qh9PAMz.png") center center no-repeat;
   transform-origin: 57px 58px;
   cursor: pointer;
   @media (max-width: 767px) {
@@ -278,7 +281,7 @@ body {
     height: 70px;
     top: 94px;
     left: 95px;
-    background: url("https://i.imgur.com/aC6xQ2M.png") center center no-repeat;
+    background: url("https://i.imgur.com/u79HeuO.png") center center no-repeat;
     transform-origin: 34px 35px;
   }
 }
