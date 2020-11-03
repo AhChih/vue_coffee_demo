@@ -67,7 +67,7 @@ export default new Vuex.Store({
       } else if (
         this.state.account.email === this.state.getAccountAry.email
       ) {
-        alert('此帳號已被註冊過')
+        alert('你是不是有失憶症？是要註冊幾次')
         return
       }
       const accountStr = JSON.stringify(this.state.account)

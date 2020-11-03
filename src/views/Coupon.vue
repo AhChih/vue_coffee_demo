@@ -19,15 +19,12 @@
             <div class="modal-body modal-item" v-if="prizeShow">
               <h3 class="mb-2 pt-3 text-bold">恭喜獲得</h3>
               <h3 class="mb-2 pt-3 text-coffee text-bold">{{ prize.name }}</h3>
-              <img src="https://i.imgur.com/apEXh7U.png " alt="" class="pt-3" />
-              <h4 class="pt-3 text-coffee text-bold">
-                  優惠卷代碼：{{ prize.coupon_code }}
-              </h4>
+              <img src="https://i.imgur.com/bmffpEl.jpg" alt="" class="pt-3" />
             </div>
             <div class="modal-btn justify-content-center" v-if="prizeShow">
               <button type="button" class="btn btn-success px-5 my-3"
                 data-dismiss="modal" @click="goProductList()">
-                旅遊去
+                分享給好友
               </button>
             </div>
             <div class="modal-body modal-item-nowin" v-if="prizeShow === false">
