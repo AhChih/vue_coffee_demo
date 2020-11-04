@@ -2,10 +2,12 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light">
       <img style="width:60px" class="logo" src="https://i.imgur.com/4PvYjzf.png" alt="">
-      <button class="navbar-toggler" style="border: none; padding:0 !important" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <tasty-burger-button class="d-block" />
+      <button class="navbar-toggler" style="border:none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <tasty-burger-button
+   :type="buttonType"
+   :active="isActive"/>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav">
           <router-link to="/home" style="font-size:25px" class="nav-link" href="#">首頁 <span class="sr-only">(current)</span></router-link>
           <router-link to="/coupon" style="font-size:25px" class="nav-link" href="#">優惠卷</router-link>
@@ -23,15 +25,18 @@
 
 <script>
 import { TastyBurgerButton } from 'vue-tasty-burgers'
-
 export default {
   data () {
     return {
-
+      buttonType: 'stand',
+      isActive: false
     }
   },
   components: {
     TastyBurgerButton
+  },
+  methods: {
+
   }
 }
 </script>

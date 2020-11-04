@@ -17,19 +17,44 @@
           role="document">
           <div class="modal-content bg-transparent border-0 text-center modal-box">
             <div class="modal-body modal-item" v-if="prizeShow">
-              <h3 class="mb-2 pt-3 text-bold">恭喜獲得</h3>
-              <h3 class="mb-2 pt-3 text-coffee text-bold">{{ prize.name }}</h3>
+              <h3 class="mb-2 pt-3">恭喜獲得</h3>
+              <h3 class="mb-2 pt-3 text-danger">{{ prize.name }}</h3>
               <img src="https://i.imgur.com/bmffpEl.jpg" alt="" class="pt-3" />
             </div>
             <div class="modal-btn justify-content-center" v-if="prizeShow">
               <button type="button" class="btn btn-success px-5 my-3"
-                data-dismiss="modal" @click="goProductList()">
-                分享給好友
+                data-dismiss="modal" @click="shareFriend()">
+                與好友分享
               </button>
             </div>
             <div class="modal-body modal-item-nowin" v-if="prizeShow === false">
-              <h3 class="pt-3 text-bold">沒有中獎</h3>
-              <h3 class="pt-3 text-bold text-coffee">請繼續努力</h3>
+              <h3 class="pt-3">沒有中獎</h3>
+              <h3 class="pt-3 text-danger">請繼續努力</h3>
+              <img src="https://i.imgur.com/iFV7X3c.png" alt="" class="pt-3" />
+              <div class="mt-3 justify-content-center" v-if="prizeShow === false">
+                <button type="button" class="btn btn-danger my-3"
+                  data-dismiss="modal" @click.prevent="reset()">
+                  再試一次
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- share modal -->
+      <div class="modal" id="shareModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center"
+          role="document">
+          <div class="modal-content bg-transparent border-0 text-center modal-box">
+            <div class="modal-body modal-item" v-if="prizeShow">
+              <h3 class="mb-2 pt-3">與好友分享</h3>
+              <h3 class="mb-2 pt-3 text-danger">{{ prize.name }}</h3>
+              <img src="https://i.imgur.com/8vMGbu4.png" alt="" class="pt-3 w-50" />
+              <a class="pt-3 d-block" href="https://lineit.line.me/share/ui?url=分享頁面的網址"><img src="https://1.bp.blogspot.com/-FvoBw8lnlC8/WHgA91RmxiI/AAAAAAAAIvA/CazIGx6Jlp8PJ4pE40kt2XMxwFmeBSdjgCLcB/s1600/168x40.png" alt=""></a>
+            </div>
+            <div class="modal-body modal-item-nowin" v-if="prizeShow === false">
+              <h3 class="pt-3">沒有中獎</h3>
+              <h3 class="pt-3 text-danger">請繼續努力</h3>
               <img src="https://i.imgur.com/iFV7X3c.png" alt="" class="pt-3" />
               <div class="mt-3 justify-content-center" v-if="prizeShow === false">
                 <button type="button" class="btn btn-danger my-3"
@@ -134,6 +159,7 @@ export default {
           }
         } else {
           vm.isClick = true
+          vm.$store.state.point += 100
           vm.reset()
         }
       }
@@ -169,10 +195,14 @@ export default {
     },
     reset () {
       const vm = this
-      vm.$store.state.point += 100
       vm.start = true
       $('.coupon-turntable-arrow').removeClass('rotateStrat')
       $('.coupon-turntable-arrow').css('transform', 'rotate(0deg)')
+    },
+    shareFriend () {
+      setTimeout(() => {
+        $('#shareModal').modal('show')
+      }, 500)
     }
   },
   components: {

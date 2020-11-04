@@ -18,8 +18,8 @@
         <input type="checkbox" class="form-check-input">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
       </div>
-      <button type="submit" class="btn btn-primary" @click.prevent="login()">登入</button>
-      <button type="submit" class="btn btn-danger ml-3" @click.prevent="registered()">註冊</button>
+      <button type="submit" class="btn btn-primary text-white" @click.prevent="login()">登入</button>
+      <button type="submit" class="btn btn-danger text-white ml-3" @click.prevent="registered()">註冊</button>
     </form>
   </div>
 </template>

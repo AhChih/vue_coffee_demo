@@ -6,8 +6,8 @@
       <h4 class="">目前累積的會員點數：{{ $store.state.point }}</h4>
       <button class="btn btn-danger mt-3 mb-5" @click.prevent="goCoupon()">抽獎去</button>
         <p class="unfinish">今日未完成工作：<span>暫時還沒有</span></p>
-        <p class="finish">今日已完成工作：<span>LOL 上鑽石</span></p>
-        <p class="doing">正在進行的工作：<span>跟同學們做報告</span></p>
+        <p class="finish">今日已完成工作：<span>搭上無限列車</span></p>
+        <p class="doing">正在進行的工作：<span>施展水之呼吸</span></p>
     </div>
     <div class="row mt-3 wow shake">
       <div class="col-xl-3 col-md-12 col-sm-12">
@@ -20,7 +20,7 @@
           style="height: 300px">
         </vue-cal>
       </div>
-      <div class="col-xl-9 news wow rotateInDownRight" >
+      <div class="col-xl-9 news" >
         <h4>最新消息</h4>
         <hr>
         <ul>
@@ -130,8 +130,6 @@ export default {
   methods: {
     goCoupon () {
       alert('這麼快就想抽獎，慢慢等吧你！')
-    },
-    onToggle (active) {
     }
   }
 }
